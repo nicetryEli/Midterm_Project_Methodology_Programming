@@ -156,7 +156,7 @@ WeatherResult rain(double n, double dc, double dg, int ld) {
             tem -= nepBanhGiay(dg);
             bgtem++;
         }
-        if (abs(bctem - bgtem) >= 1) break;
+        if (abs((int)bctem - (int)bgtem) >= 1) break;
     }
     bc = (int)bctem;
     bg = (int)bgtem;
@@ -285,7 +285,7 @@ int main() {
     char w[6];
     inputfile = fopen("input.inp", "r");
 
-    fscanf(inputfile, "%d %d %d %d %s", &n, &dc, &dg, &ld, &w);
+    fscanf(inputfile, "%d %d %d %d %5s", &n, &dc, &dg, &ld, w);
     fclose(inputfile);
 
     w[strcspn(w, "\r\n")] = 0;  
